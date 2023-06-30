@@ -95,13 +95,19 @@ const addImgSlider = () => {
 
 
     // circles.
-    const circleArray = document.getElementsByClassName('circle');
-    console.log(circleArray);
-    for (let i = 0; i < circleArray.length; i++){
-        circleArray[i].addEventListener('click', () => {
+    const circleCollection = document.getElementsByClassName('circle');
+    console.log(circleCollection);
+    for (let i = 0; i < circleCollection.length; i++){
+        circleCollection[i].addEventListener('click', () => {
+            // removes all filled circle css classes.
+            for (let i = 0; i < circleCollection.length; i++){
+                circleCollection[i].classList.remove("clickedCircle");
+            }
+        
             imgArray.forEach(img => {img.style.display = 'none'})
             arrIndex = i;
             imgArray[arrIndex].style.display = 'block';
+            circleCollection[i].classList.add("clickedCircle");
         })
     }
 

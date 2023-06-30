@@ -76,6 +76,6 @@ body{
     height: 100%;
 }
 
-.circle {
-    
+.clickedCircle {
+    background-color: blueviolet;
 }
